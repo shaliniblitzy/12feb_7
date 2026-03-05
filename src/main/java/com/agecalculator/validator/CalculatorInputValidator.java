@@ -42,8 +42,10 @@ public class CalculatorInputValidator {
                 "Invalid number input. Please enter a valid numeric value.");
         }
         try {
+            // Attempt to parse the string input as a double-precision floating-point value
             return Double.parseDouble(input);
         } catch (NumberFormatException e) {
+            // Wrap NumberFormatException in a user-friendly IllegalArgumentException
             throw new IllegalArgumentException(
                 "Invalid number input. Please enter a valid numeric value.", e);
         }

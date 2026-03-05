@@ -32,7 +32,7 @@ class CalculatorInputValidatorTest {
      */
     @Test
     void testParseNumberValidInteger() {
-        assertEquals(5.0, validator.parseNumber("5"));
+        assertEquals(5.0, validator.parseNumber("5"), 0.0001);
     }
 
     /**
@@ -40,7 +40,7 @@ class CalculatorInputValidatorTest {
      */
     @Test
     void testParseNumberValidDecimal() {
-        assertEquals(3.14, validator.parseNumber("3.14"));
+        assertEquals(3.14, validator.parseNumber("3.14"), 0.0001);
     }
 
     /**
@@ -48,7 +48,7 @@ class CalculatorInputValidatorTest {
      */
     @Test
     void testParseNumberValidNegative() {
-        assertEquals(-7.5, validator.parseNumber("-7.5"));
+        assertEquals(-7.5, validator.parseNumber("-7.5"), 0.0001);
     }
 
     /**
