@@ -5,6 +5,7 @@ import com.agecalculator.service.CalculatorService;
 import com.agecalculator.validator.CalculatorInputValidator;
 import com.agecalculator.formatter.CalculationFormatter;
 import com.agecalculator.ui.CalculatorConsoleUI;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -148,6 +149,14 @@ public class AgeCalculatorApp {
         } catch (ArithmeticException e) {
             // Handles division by zero errors
             calcUI.displayError(calcFormatter.formatError(e.getMessage()));
+        } catch (NoSuchElementException e) {
+            // Handles unexpected end of input stream (e.g., piped input exhausted)
+            calcUI.displayError(calcFormatter.formatError(
+                    "Input stream ended unexpectedly. Please provide all required inputs."));
+        } catch (Exception e) {
+            // Safety net for any other unexpected exceptions — prevents stack trace leakage
+            calcUI.displayError(calcFormatter.formatError(
+                    "An unexpected error occurred: " + e.getMessage()));
         }
     }
 
