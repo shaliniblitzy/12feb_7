@@ -1,6 +1,6 @@
 # 12feb_7
 
-A Java 21 console application featuring two tools: an **Age Calculator** that computes a person's age from their birth date, and an **Arithmetic Calculator** that performs basic arithmetic operations on two numbers. Built with Maven Standard Directory Layout, following OOP best practices and a layered architecture.
+A Java 21 console application featuring two tools: an **Age Calculator** (coming soon) that will compute a person's age from their birth date, and an **Arithmetic Calculator** that performs basic arithmetic operations on two numbers. Built with Maven Standard Directory Layout, following OOP best practices and a layered architecture.
 
 ---
 
@@ -83,11 +83,11 @@ The project follows the Maven Standard Directory Layout with a layered package s
 ```
 src/
 ├── main/java/com/agecalculator/
-│   ├── model/             — Data models (AgeResult, CalculationResult)
-│   ├── service/           — Business logic services (AgeCalculationService, CalculatorService)
-│   ├── validator/         — Input validation (DateInputValidator, CalculatorInputValidator)
-│   ├── formatter/         — Output formatting (AgeFormatter, CalculationFormatter)
-│   ├── ui/                — Console user interface (ConsoleUI, CalculatorConsoleUI)
+│   ├── model/             — Data models (CalculationResult)
+│   ├── service/           — Business logic services (CalculatorService)
+│   ├── validator/         — Input validation (CalculatorInputValidator)
+│   ├── formatter/         — Output formatting (CalculationFormatter)
+│   ├── ui/                — Console user interface (CalculatorConsoleUI)
 │   └── AgeCalculatorApp.java  — Application entry point
 └── test/java/com/agecalculator/
     ├── service/           — Service unit tests
