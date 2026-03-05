@@ -53,6 +53,10 @@ public class AgeCalculatorApp {
     public static void main(String[] args) {
         while (true) {
             displayMainMenu();
+            if (!scanner.hasNextLine()) {
+                System.out.println("Goodbye!");
+                return;
+            }
             String choice = scanner.nextLine().trim();
 
             switch (choice) {
