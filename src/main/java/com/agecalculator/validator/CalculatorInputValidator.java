@@ -37,6 +37,10 @@ public class CalculatorInputValidator {
      * @throws IllegalArgumentException if the input is not a valid numeric value
      */
     public double parseNumber(String input) {
+        if (input == null) {
+            throw new IllegalArgumentException(
+                "Invalid number input. Please enter a valid numeric value.");
+        }
         try {
             return Double.parseDouble(input);
         } catch (NumberFormatException e) {

@@ -49,29 +49,20 @@ public class CalculationFormatter {
     }
 
     /**
-     * Formats a double value as a string, converting whole numbers to their
-     * integer representation for cleaner display.
+     * Formats a double value as its standard string representation.
      *
-     * <p>If the number has no fractional component (e.g., {@code 10.0}), it is
-     * displayed as a long integer (e.g., {@code "10"}). If it has a fractional
-     * component (e.g., {@code 3.75}), the full decimal representation is preserved.</p>
+     * <p>Uses {@link String#valueOf(double)} to produce the default Java string form
+     * of the number, preserving the decimal point for whole numbers (e.g., {@code 10.0}
+     * remains {@code "10.0"}) and retaining full precision for fractional values
+     * (e.g., {@code 3.75} becomes {@code "3.75"}).</p>
      *
-     * <p>Special cases handled:</p>
-     * <ul>
-     *   <li>Values outside the range of {@code long} retain their double representation</li>
-     *   <li>{@code NaN} and {@code Infinity} are rendered using their default string forms</li>
-     * </ul>
+     * <p>Special values {@code NaN} and {@code Infinity} are rendered using their
+     * default string forms.</p>
      *
      * @param number the number to format
      * @return formatted number string
      */
     private String formatNumber(double number) {
-        if (Double.isNaN(number) || Double.isInfinite(number)) {
-            return String.valueOf(number);
-        }
-        if (number == (long) number) {
-            return String.valueOf((long) number);
-        }
         return String.valueOf(number);
     }
 }

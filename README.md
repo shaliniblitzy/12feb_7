@@ -71,7 +71,7 @@ The calculator gracefully handles the following error scenarios with descriptive
   ```
 - **Division by zero:**
   ```
-  Error: Cannot divide by zero.
+  Error: Cannot divide by zero
   ```
 
 ---
